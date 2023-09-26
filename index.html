@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="dayjs.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="index.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="app-name">Todo list</h1>
+      <div class="language">
+        <button value="vn" class="language-btn">VN</button>
+        <button
+          type="submit"
+          value="en"
+          class="active-language-btn language-btn"
+          >EN</button
+        >
+      </div>
+    </header>
+    <form class="task-form" action="">
+      <input name="task" class="text-input" type="text" />
+      <input name="deadline" type="datetime-local" class="date-time-input" />
+      <button class="form-btn"></button>
+    </form>
+    <div class="task-card-container"> </div>
+  </body>
+</html>
