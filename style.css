@@ -120,7 +120,7 @@ header {
 
 /* form */
 .date-time-input {
-  width: auto;
+  width: 220px;
   height: 2.5rem;
   font-size: var(--small-text-size);
   border: var(--normal-primary-border);
@@ -209,4 +209,21 @@ header {
 }
 .task-card .delete-btn {
   color: var(--warming);
+}
+
+@media only screen and (max-width: 1200px) {
+  .text-input {
+    width: 220px;
+  }
+  .task-card {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .task-form {
+    flex-direction: column;
+  }
+  .task-card {
+    width: 90%;
+  }
 }

@@ -18,6 +18,7 @@ const languageSet = {
       save: "Lưu",
       discard: "Hủy",
       edit: "Sửa",
+      editCard: "Sửa thẻ"
     },
   },
   en: {
@@ -39,6 +40,7 @@ const languageSet = {
       save: "Save",
       discard: "Discard",
       edit: "Edit",
+      editCard: "Edit Card"
     },
   },
 };
