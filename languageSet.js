@@ -8,6 +8,8 @@ const languageSet = {
     },
     message: {
       expirationWarning: "Sắp đến hạn",
+      formAlert: "Hãy nhập đầy đủ thông tin",
+      maximumTaskCard: "Bạn chỉ có thể lưu tối đa 20 việc"
     },
     todoCard: {
       task: "Việc: ",
@@ -30,6 +32,8 @@ const languageSet = {
     },
     message: {
       expirationWarning: "Expired soon",
+      formAlert: "Fill all inputs",
+      maximumTaskCard: "You can only have 20 task cards"
     },
     todoCard: {
       task: "Task: ",

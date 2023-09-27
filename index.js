@@ -108,6 +108,14 @@ form.addEventListener("submit", (e) => {
     formState = 'add';
     formBtn.innerText = languageSet[currLang].button.addCard
   }
-  setLocalItem("todo", todoList);
-  prepareList();
+  // validate form
+  if (!formProps.task || formProps.deadline === "Invalid Date") {
+    window.alert(languageSet[currLang].message.formAlert)
+  } else if (todoList.length > 20) {
+    window.alert(languageSet[currLang].message.maximumTaskCard);
+    todoList.pop()
+  } else {
+    setLocalItem("todo", todoList);
+    prepareList();
+  }
 });
