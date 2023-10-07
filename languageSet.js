@@ -13,11 +13,11 @@ const languageSet = {
       deadline: "Hạn: ",
     },
     button: {
-      addCard: "Thêm thẻ mới",
+      addCard: "Thêm việc mới",
       save: "Lưu",
       discard: "Hủy",
       edit: "Sửa",
-      editCard: "Sửa thẻ"
+      editCard: "Sửa việc"
     },
   },
   en: {
@@ -34,11 +34,11 @@ const languageSet = {
       deadline: "Deadline: ",
     },
     button: {
-      addCard: "Add new card",
+      addCard: "Add new task",
       save: "Save",
       discard: "Discard",
       edit: "Edit",
-      editCard: "Edit Card"
+      editCard: "Edit task"
     },
   },
 };
