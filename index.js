@@ -94,6 +94,23 @@ const changeLang = () => {
 };
 changeLang();
 
+const validateForm = (formObj) => {
+  if (!formObj.task || formObj.deadline === "Invalid Date") {
+    window.alert(languageSet[currLang].message.formAlert)
+  } else if (formObj.task.length >= 10) {
+    window.alert(languageSet[currLang].message.maximumTextLength);
+  } else if (dayjs(formObj.deadline).unix() - dayjs().unix() <= 0) {
+    window.alert(languageSet[currLang].message.noPastDate);
+  }
+  else if (todoList.length > 70) {
+    window.alert(languageSet[currLang].message.maximumTaskCard);
+    todoList.pop()
+  } else {
+    setLocalItem("todo", todoList);
+    prepareList();
+  }
+}
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const formData = new FormData(e.target, formBtn);
@@ -108,14 +125,5 @@ form.addEventListener("submit", (e) => {
     formState = 'add';
     formBtn.innerText = languageSet[currLang].button.addCard
   }
-  // validate form
-  if (!formProps.task || formProps.deadline === "Invalid Date") {
-    window.alert(languageSet[currLang].message.formAlert)
-  } else if (todoList.length > 20) {
-    window.alert(languageSet[currLang].message.maximumTaskCard);
-    todoList.pop()
-  } else {
-    setLocalItem("todo", todoList);
-    prepareList();
-  }
+  validateForm(formProps)
 });

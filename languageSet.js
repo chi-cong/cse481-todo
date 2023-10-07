@@ -1,15 +1,12 @@
 const languageSet = {
   vn: {
     appName: "Danh sách việc",
-    filter: {
-      all: "Tất cả",
-      expired: "Hết hạn",
-      undone: "Cần làm",
-    },
     message: {
       expirationWarning: "Sắp đến hạn",
       formAlert: "Hãy nhập đầy đủ thông tin",
-      maximumTaskCard: "Bạn chỉ có thể lưu tối đa 20 việc"
+      maximumTaskCard: "Bạn chỉ có thể lưu tối đa 20 việc",
+      maximumTextLength: "công việc dài tối đa 70 ký tự",
+      noPastDate: "Hạn không thể là quá khứ"
     },
     todoCard: {
       task: "Việc: ",
@@ -25,15 +22,12 @@ const languageSet = {
   },
   en: {
     appName: "Todo list",
-    filter: {
-      all: "All",
-      expired: "Expired",
-      undone: "Undone",
-    },
     message: {
       expirationWarning: "Expired soon",
       formAlert: "Fill all inputs",
-      maximumTaskCard: "You can only have 20 task cards"
+      maximumTaskCard: "You can only have 20 task cards",
+      maximumTextLength: "Maximum task text length is 70 characters",
+      noPastDate: "The date can't be past"
     },
     todoCard: {
       task: "Task: ",
