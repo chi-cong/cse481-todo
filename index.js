@@ -16,6 +16,7 @@ let todoList = getLocalItem("todo");
 if (!todoList) {
   setLocalItem("todo", [
   ]);
+  todoList = [];
 }
 /* language */
 let currLang = "en";
@@ -106,9 +107,9 @@ const validateForm = (formObj) => {
     window.alert(languageSet[currLang].message.maximumTaskCard);
     todoList.pop()
   } else {
-    setLocalItem("todo", todoList);
-    prepareList();
+    return true
   }
+  return false
 }
 
 form.addEventListener("submit", (e) => {
@@ -116,14 +117,19 @@ form.addEventListener("submit", (e) => {
   const formData = new FormData(e.target, formBtn);
   const formProps = Object.fromEntries(formData);
   formProps.deadline = dayjs(formProps.deadline).format('MM-DD-YYYY HH:mm');
-  if (formState === 'add') {
-    formProps.id = Date.now()
-    todoList.push(formProps);
-  } else {
-    formProps.id = todoList[editedItemPos].id
-    todoList[editedItemPos] = formProps;
-    formState = 'add';
-    formBtn.innerText = languageSet[currLang].button.addCard
+  const isValid = validateForm(formProps);
+
+  if (isValid) {
+    if (formState === 'add') {
+      formProps.id = Date.now()
+      todoList.push(formProps);
+    } else {
+      formProps.id = todoList[editedItemPos].id
+      todoList[editedItemPos] = formProps;
+      formState = 'add';
+      formBtn.innerText = languageSet[currLang].button.addCard
+    }
+    setLocalItem("todo", todoList);
+    prepareList();
   }
-  validateForm(formProps)
 });
