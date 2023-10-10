@@ -105,7 +105,6 @@ const validateForm = (formObj) => {
   }
   else if (todoList.length > 70) {
     window.alert(languageSet[currLang].message.maximumTaskCard);
-    todoList.pop()
   } else {
     return true
   }
